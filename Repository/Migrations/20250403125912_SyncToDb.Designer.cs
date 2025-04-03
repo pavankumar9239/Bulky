@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository.DBContext;
 
@@ -10,9 +11,11 @@ using Repository.DBContext;
 namespace Repository.Migrations
 {
     [DbContext(typeof(BulkyDBContext))]
-    partial class BulkyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250403125912_SyncToDb")]
+    partial class SyncToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
