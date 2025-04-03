@@ -1,3 +1,5 @@
+using Repository.Extensions;
+
 namespace BulkyWeb
 {
     public class Program
@@ -8,6 +10,9 @@ namespace BulkyWeb
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Fix: Correctly call the extension method on IServiceCollection
+            builder.Services.AddRepositoryExtensions();
 
             var app = builder.Build();
 
